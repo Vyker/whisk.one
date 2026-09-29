@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Whisk — done-for-you websites in 3 days">
+  <title>Whisk — Done-for-you websites in 3 days</title>
+  <rect width="1200" height="630" fill="#fff8f5"/>
+  <!-- wordmark -->
+  <text x="600" y="215" text-anchor="middle" font-family="'Times New Roman', 'Liberation Serif', serif" font-size="132" font-weight="700" fill="#201a16">Whisk</text>
+  <!-- swish, right-aligned under the word (logo treatment) -->
+  <g transform="translate(676, 232) scale(1.21)">
+    <path d="M 0 12 C 1.5 18, 67 18, 104 9" fill="none" stroke="#ab2f00" stroke-width="8.5" stroke-linecap="round"/>
+  </g>
+  <!-- tagline -->
+  <text x="600" y="372" text-anchor="middle" font-family="'Times New Roman', 'Liberation Serif', serif" font-size="54" fill="#201a16">Done-for-you websites in 3 days.</text>
+  <!-- sub -->
+  <text x="600" y="442" text-anchor="middle" font-family="Inter, 'DejaVu Sans', sans-serif" font-size="30" fill="#5a4139">One website. One price. A person on the other side.</text>
+  <!-- domain pill -->
+  <rect x="492" y="492" width="216" height="60" rx="30" fill="#f8ebe4" stroke="#e3bfb5" stroke-width="2"/>
+  <text x="600" y="532" text-anchor="middle" font-family="Consolas, 'DejaVu Sans Mono', monospace" font-size="30" font-weight="700" fill="#ab2f00">whisk.one</text>
+</svg>

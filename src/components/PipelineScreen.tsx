@@ -362,8 +362,8 @@ export const PipelineScreen: React.FC<PipelineScreenProps> = ({
       <div className="mt-6 p-4 rounded-xl bg-[#fef1ea] border border-[#e3bfb5]/40 text-center">
         <p className="text-xs text-[#5a4139]">
           Have questions during your build? Message your dedicated developer at{' '}
-          <a href="mailto:hello@whisk.app" className="font-semibold text-[#ab2f00] underline">
-            hello@whisk.app
+          <a href="mailto:hello@whisk.one" className="font-semibold text-[#ab2f00] underline">
+            hello@whisk.one
           </a>
         </p>
       </div>

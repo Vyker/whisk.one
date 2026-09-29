@@ -1,6 +1,0 @@
-{
-  "name": "Whisk — Done-For-You Websites in 3 Days",
-  "description": "Tell us who you are. Three days later, you’re live. No tech, no jargon, no guesswork.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

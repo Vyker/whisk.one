@@ -35,7 +35,7 @@ export const PortalScreen: React.FC<PortalScreenProps> = ({ onNavigateTab }) => 
   };
 
   const handleCopyDns = () => {
-    navigator.clipboard?.writeText?.('A 76.76.21.21\nCNAME cname.whisk.app');
+    navigator.clipboard?.writeText?.('A 76.76.21.21\nCNAME cname.whisk.one');
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };
@@ -220,7 +220,7 @@ export const PortalScreen: React.FC<PortalScreenProps> = ({ onNavigateTab }) => 
           </span>
         </div>
         <button
-          onClick={() => alert('Care plan is active. To modify billing or payment method, email hello@whisk.app.')}
+          onClick={() => alert('Care plan is active. To modify billing or payment method, email hello@whisk.one.')}
           className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold whitespace-nowrap transition-colors"
         >
           Manage Plan

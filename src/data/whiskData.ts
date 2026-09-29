@@ -1,3 +1,6 @@
+import roasteryImg from '../assets/showcase/roastery.jpg';
+import maisonImg from '../assets/showcase/maison.jpg';
+
 export interface ShowcaseSample {
   id: string;
   name: string;
@@ -21,7 +24,7 @@ export const SHOWCASE_SAMPLES: Record<string, ShowcaseSample> = {
     type: 'Artisan Coffee & Micro-Roasters',
     location: 'Shoreditch, London',
     tagline: 'Single origin beans, roasted fresh every Tuesday morning.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBeeP9g6o4LW77iBPal5Z9bb26tARcWIB_Vg5Cwok6wpQEo5SzXA56wY5gEqtngSCyc2pY_g-3JvyBfmcmPtCSJhW6yrdJn1tX3pR1ezsVmT335B8QTk96wKybEjdoMB_yXfmiBFfNPskECt6gIYXICZocORZEN8yPT5H5yikDAWB1eEKprb5MM-BPJ1utQNOXCOEVCG_O-JV9NqkQyuiH6zWQNzY-W72vKgRFYlQYzFaLlVYnMSh6SQQ',
+    image: roasteryImg,
     heroHeadline: 'Ethically sourced. Small-batch roasted in East London.',
     heroDescription: 'From high-altitude Ethiopian micro-lots to silky smooth Colombian beans. Served with artisan sourdough pastries daily.',
     features: ['Espresso & Filter Flight Menu', 'Monthly Coffee Subscription Delivery', 'Barista Masterclasses on Saturdays'],
@@ -36,7 +39,7 @@ export const SHOWCASE_SAMPLES: Record<string, ShowcaseSample> = {
     type: 'Boutique Facial & Wellness Atelier',
     location: 'Le Marais, Paris / Tribeca, New York',
     tagline: 'Holistic skin treatments and botanical sculpting.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDeNFBvFioqyUqt5yYuZJGlH7iiYJDcI34MMBGidWBeqOH4bJUt26xsWvW9mJ40-I_OwTw057gMHuS5cGYE16kQ45_-UPcFuAGuG_4KTHuQdkAlZtS86QzCg_Zm2AHF67-Ow7Is8SEb6S8_-46IIDMJUI2yG737boZ9mgABsoELu8n4HdSPCWzazfFHiABZNKg1vofZVv8Ux_RmExX6_1X83eVjpaEmryiAzft9uUt12ipOZPgJVCbMaA',
+    image: maisonImg,
     heroHeadline: 'Timeless French skincare meets modern cellular renewal.',
     heroDescription: 'Individualized facial protocols blending lymphatic drainage massage, organic botanical active serums, and micro-current lifting.',
     features: ['Signature 75-Min Glow Facial', 'Cryo-Sculpting & Gua Sha Atelier', 'Curated European Clean Skincare apothecary'],

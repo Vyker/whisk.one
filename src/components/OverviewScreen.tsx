@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BASE_PRICES, formatPrice } from '../data/currencies';
 import { INDUSTRY_CHIPS, SHOWCASE_SAMPLES, ShowcaseSample } from '../data/whiskData';
 import { ScreenTab } from '../types';
+import { LegalModal } from './LegalModal';
 
 interface OverviewScreenProps {
   activeCurrency: string;
@@ -39,6 +40,9 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
   // Domain checking indicator
   const [domainChecking, setDomainChecking] = useState(false);
   const [domainStatus, setDomainStatus] = useState<string | null>(null);
+
+  // Legal docs (privacy / terms) shown in a modal
+  const [legalDoc, setLegalDoc] = useState<'privacy' | 'terms' | null>(null);
 
   const handleDomainChange = (val: string) => {
     setDomain(val);
@@ -835,10 +839,10 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
             <p className="text-xs text-[#5a4139]">
               Prefer to talk?{' '}
               <a
-                href="mailto:hello@whisk.app"
+                href="mailto:hello@whisk.one"
                 className="font-semibold text-[#ab2f00] underline underline-offset-4"
               >
-                hello@whisk.app
+                hello@whisk.one
               </a>{' '}
               — we answer within 24 hours.
             </p>
@@ -885,14 +889,16 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
 
         <div className="flex items-center gap-4 text-xs">
           <button
-            onClick={() => alert('Whisk Privacy Policy: We never sell your personal information or domain records.')}
+            onClick={() => setLegalDoc('privacy')}
             className="text-[#FBF7F1] underline underline-offset-4 hover:text-[#fed56b]"
+            type="button"
           >
             Privacy Policy
           </button>
           <button
-            onClick={() => alert('Whisk Terms: 3-day delivery guarantee starts after intake confirmation and domain check approval.')}
+            onClick={() => setLegalDoc('terms')}
             className="text-[#FBF7F1] underline underline-offset-4 hover:text-[#fed56b]"
+            type="button"
           >
             Terms of Service
           </button>
@@ -904,6 +910,9 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
           </span>
         </div>
       </footer>
+
+      {/* Legal Docs Modal */}
+      <LegalModal doc={legalDoc} onClose={() => setLegalDoc(null)} />
     </div>
   );
 };

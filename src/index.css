@@ -39,18 +39,6 @@
   --color-cream: #fbf7f1;
 }
 
-:root {
-  --cream: #FBF7F1;
-  --cream-deep: #F3EBDF;
-  --ink: #201A16;
-  --ink-soft: #6B5F55;
-  --ember: #E44E1C;
-  --ember-deep: #B93A10;
-  --butter: #FFD66B;
-  --sage: #2F6B57;
-  --line: #E5DACA;
-}
-
 body {
   margin: 0;
   padding: 0;

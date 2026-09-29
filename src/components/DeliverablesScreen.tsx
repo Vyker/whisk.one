@@ -24,8 +24,8 @@ PROJECT: Sarah Jenkins Pilates
 DOMAIN: https://sarahpilates.com
 STATUS: Live & Verified
 LAUNCH DATE: 2026-09-29
-REGISTERED REGISTRAR: Cloudflare Registrar (Transferrable)
-EPP AUTH CODE: WHISK-EPP-98421-SARAH
+REGISTERED REGISTRAR: Spaceship (Registrar of Record - Transferrable)
+EPP AUTH CODE: WHISK-EPP-98421-SARAH (sample - your real code is delivered at launch)
 
 ------------------------------------------------
 1. BRAND ASSETS & DESIGN TOKENS
@@ -45,7 +45,7 @@ Color Palette:
 2. PROFESSIONAL EMAIL CREDENTIALS
 ------------------------------------------------
 Email: hello@sarahpilates.com
-Webmail: https://webmail.whisk.app
+Webmail: https://webmail.whisk.one
 IMAP Server: mail.sarahpilates.com (Port 993, SSL/TLS)
 SMTP Server: mail.sarahpilates.com (Port 465, SSL/TLS)
 
@@ -60,7 +60,7 @@ Google Search Console: Verified via DNS TXT Record
 4. 7-DAY POST-LAUNCH WARRANTY
 ------------------------------------------------
 Free unlimited minor tweaks valid through: October 06, 2026.
-Email: hello@whisk.app
+Email: hello@whisk.one
 Emergency Support: +1 (800) 555-WHISK
 ================================================`;
 
@@ -106,7 +106,7 @@ Emergency Support: +1 (800) 555-WHISK
             <span className="material-symbols-outlined text-[18px]">
               {downloading ? 'sync' : 'download'}
             </span>
-            <span>{downloading ? 'Compiling Vault...' : 'Download Full Vault (.zip)'}</span>
+            <span>{downloading ? 'Compiling Vault...' : 'Download Vault (.txt)'}</span>
           </button>
         </div>
       </div>
@@ -187,7 +187,7 @@ Emergency Support: +1 (800) 555-WHISK
                 Domain Transfer Authorization (EPP Code)
               </span>
               <span className="text-[11px] text-[#5a4139]">
-                Transfer your domain anytime to GoDaddy, Google, or Namecheap.
+                Transfer your domain anytime to GoDaddy, Spaceship, or Namecheap. (Sample data shown.)
               </span>
             </div>
           </div>
