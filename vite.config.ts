@@ -5,9 +5,9 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    // Hosted as a GitHub Pages project site: https://vyker.github.io/whisk.one/
-    // When the custom domain whisk.one is connected via CNAME, change base to '/'.
-    base: '/whisk.one/',
+    // Custom domain whisk.one is connected (see CNAME file), so the site
+    // builds from the root. Do not add a sub-path prefix here.
+    base: '/',
     resolve: {
       alias: {
         '@': import.meta.dirname,
