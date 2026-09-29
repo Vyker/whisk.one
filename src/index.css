@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-headline: 'Fraunces', serif;
+  --font-serif: 'Newsreader', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --color-surface: #fff8f5;
+  --color-surface-container: #f8ebe4;
+  --color-surface-container-low: #fef1ea;
+  --color-surface-container-high: #f3e6df;
+  --color-surface-container-highest: #ede0d9;
+  --color-on-surface: #201a16;
+  --color-on-surface-variant: #5a4139;
+
+  --color-primary: #ab2f00;
+  --color-primary-container: #d2420e;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #ffdbd1;
+  --color-on-primary-fixed: #3a0a00;
+
+  --color-secondary: #765b00;
+  --color-secondary-container: #fed56b;
+  --color-on-secondary-container: #765b00;
+  --color-secondary-fixed: #ffdf93;
+
+  --color-tertiary: #2a6653;
+  --color-tertiary-container: #44806a;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed: #b1f0d6;
+  --color-on-tertiary-fixed-variant: #0e503e;
+
+  --color-outline: #8e7068;
+  --color-outline-variant: #e3bfb5;
+
+  --color-ink: #201a16;
+  --color-cream: #fbf7f1;
+}
+
+:root {
+  --cream: #FBF7F1;
+  --cream-deep: #F3EBDF;
+  --ink: #201A16;
+  --ink-soft: #6B5F55;
+  --ember: #E44E1C;
+  --ember-deep: #B93A10;
+  --butter: #FFD66B;
+  --sage: #2F6B57;
+  --line: #E5DACA;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #fff8f5;
+  color: #201a16;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Material symbol styling helper */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+}
