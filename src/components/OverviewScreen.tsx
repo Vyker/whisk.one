@@ -534,7 +534,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
             {/* Dynamic Price Slot */}
             <div className="py-1 flex items-baseline gap-2">
               <span className="text-[2.25rem] leading-none font-bold text-[#201a16] tracking-tight font-mono">
-                ≈ {formatPrice(BASE_PRICES.build, activeCurrency)} {activeCurrency}
+                ≈ {formatPrice(BASE_PRICES.build, activeCurrency)}
               </span>
             </div>
 
@@ -590,7 +590,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
             {/* Dynamic Price Slot */}
             <div className="py-1 flex items-baseline gap-2">
               <span className="text-[2.25rem] leading-none font-bold text-[#201a16] tracking-tight font-mono">
-                ≈ {formatPrice(BASE_PRICES.care, activeCurrency)} {activeCurrency}
+                ≈ {formatPrice(BASE_PRICES.care, activeCurrency)}
               </span>
               <span className="text-xs text-[#5a4139]">/ year</span>
             </div>

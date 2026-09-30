@@ -2,8 +2,8 @@ import { CurrencyConfig } from '../types';
 
 export const CURRENCIES: Record<string, CurrencyConfig> = {
   USD: { code: 'USD', name: 'US Dollar', symbol: '$', rate: 1 },
-  AED: { code: 'AED', name: 'UAE Dirham', symbol: 'AED ', rate: 3.67 },
-  SAR: { code: 'SAR', name: 'Saudi Riyal', symbol: 'SAR ', rate: 3.75 },
+  AED: { code: 'AED', name: 'UAE Dirham', symbol: 'د.إ ', rate: 3.67 },
+  SAR: { code: 'SAR', name: 'Saudi Riyal', symbol: '﷼ ', rate: 3.75 },
   EUR: { code: 'EUR', name: 'Euro', symbol: '€', rate: 0.92 },
   GBP: { code: 'GBP', name: 'British Pound', symbol: '£', rate: 0.79 },
   CAD: { code: 'CAD', name: 'Canadian Dollar', symbol: 'CA$', rate: 1.38 },

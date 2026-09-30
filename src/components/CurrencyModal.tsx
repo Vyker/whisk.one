@@ -92,7 +92,7 @@ export const CurrencyModal: React.FC<CurrencyModalProps> = ({
                   <div className="flex flex-col">
                     <span className="text-sm font-medium text-[#201a16]">{curr.name}</span>
                     <span className="text-[11px] text-[#5a4139]">
-                      Build: {buildDisplay} {curr.code}
+                      Build: {buildDisplay}
                     </span>
                   </div>
                 </div>
