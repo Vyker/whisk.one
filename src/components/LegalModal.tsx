@@ -50,7 +50,7 @@ const CONTENT: Record<'privacy' | 'terms', { title: string; note: string; sectio
       },
       {
         h: 'Liability',
-        p: 'To the maximum extent permitted by law, Whisk’s total liability is limited to the amount you paid for the service. Whisk is operated by Vyker Services FZ LLC.',
+        p: 'To the maximum extent permitted by law, Whisk’s total liability is limited to the amount you paid for the service.',
       },
     ],
   },

@@ -958,7 +958,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
         </div>
 
         <div className="flex flex-col gap-1 text-[#E5DACA]/70 text-xs">
-          <p>Whisk is operated by Vyker Services FZ LLC.</p>
+          <p>© {new Date().getFullYear()} Whisk. All rights reserved.</p>
           <p className="text-[11px] leading-tight">
             All prices dynamically displayed in your selected local currency based on mid-market
             benchmarks.
