@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { BASE_PRICES, formatPrice } from '../data/currencies';
 import { INDUSTRY_CHIPS, SHOWCASE_SAMPLES, ShowcaseSample } from '../data/whiskData';
 import { ScreenTab } from '../types';
 import { LegalModal } from './LegalModal';
+
+// Web3Forms delivers quote requests to hello@whisk.one (Purelymail inbox).
+// The access key is public by design: it only identifies the recipient inbox.
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_ACCESS_KEY = '5e6b340f-351d-41f2-a931-13819c7a55bc';
 
 interface OverviewScreenProps {
   activeCurrency: string;
@@ -35,6 +40,10 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
   const [domain, setDomain] = useState('');
   const [details, setDetails] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  // Honeypot trap for bots (Web3Forms rejects submissions where this is filled)
+  const botcheckRef = useRef<HTMLInputElement>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
 
   // Domain checking indicator
@@ -72,19 +81,52 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !profession.trim()) return;
+    if (!name.trim() || !email.trim() || !profession.trim() || isSending) return;
 
-    onQuoteSubmitted({
-      name,
-      email,
-      profession,
-      location,
-      domain,
-      details,
-    });
-    setIsSubmitted(true);
+    setIsSending(true);
+    setSubmitError(false);
+
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New quote request — ${name.trim()}`,
+          from_name: name.trim(),
+          reply_to: email.trim(),
+          name: name.trim(),
+          email: email.trim(),
+          profession: profession.trim(),
+          location: location.trim(),
+          domain: domain.trim(),
+          details: details.trim(),
+          botcheck: botcheckRef.current?.value ?? '',
+        }),
+      });
+      const data = (await res.json().catch(() => null)) as {
+        success?: boolean | string;
+        message?: string;
+      } | null;
+      const ok = res.ok && !!data && (data.success === true || data.success === 'true');
+      if (!ok) throw new Error(data?.message || 'Unexpected response from form service');
+
+      onQuoteSubmitted({
+        name,
+        email,
+        profession,
+        location,
+        domain,
+        details,
+      });
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const faqItems = [
@@ -687,6 +729,18 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
         <div className="bg-[#f8ebe4] p-6 rounded-[20px] shadow-sm flex flex-col gap-4 border border-[#e3bfb5]/40">
           {!isSubmitted ? (
             <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
+              {/* Honeypot: invisible to humans, auto-filled by bots */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="form-botcheck">Leave this field empty</label>
+                <input
+                  id="form-botcheck"
+                  ref={botcheckRef}
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Name */}
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold text-[#201a16]" htmlFor="form-name">
@@ -797,11 +851,35 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
               {/* Submit Button */}
               <button
                 type="submit"
-                className="mt-1 min-h-[48px] px-8 py-3.5 rounded-full bg-[#ab2f00] hover:bg-[#862300] text-white text-[15px] font-semibold shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                disabled={isSending}
+                className="mt-1 min-h-[48px] px-8 py-3.5 rounded-full bg-[#ab2f00] hover:bg-[#862300] disabled:hover:bg-[#ab2f00] text-white text-[15px] font-semibold shadow-md active:scale-[0.98] disabled:active:scale-100 disabled:opacity-70 disabled:cursor-wait transition-all flex items-center justify-center gap-2"
               >
-                <span>Send my request</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                {isSending ? (
+                  <>
+                    <span className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
+                    <span>Sending…</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Send my request</span>
+                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  </>
+                )}
               </button>
+
+              {submitError && (
+                <p className="text-xs text-[#7c2d12] bg-[#fde8e0] border border-[#f3c1b1] rounded-lg px-3 py-2.5">
+                  Something went wrong sending your request — please try again, or email us
+                  directly at{' '}
+                  <a
+                    href="mailto:hello@whisk.one"
+                    className="font-semibold underline underline-offset-2"
+                  >
+                    hello@whisk.one
+                  </a>
+                  .
+                </p>
+              )}
             </form>
           ) : (
             /* Feedback Confirmation Container */

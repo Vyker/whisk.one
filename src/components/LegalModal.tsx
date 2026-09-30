@@ -12,7 +12,7 @@ const CONTENT: Record<'privacy' | 'terms', { title: string; note: string; sectio
     sections: [
       {
         h: 'What we collect',
-        p: 'Only what you share with us: your name, email, business details, and the domain you have in mind — through the quote form or in conversation. We use it to prepare your quote and build your site. Nothing else.',
+        p: 'Only what you share with us: your name, email, business details, and the domain you have in mind — through the quote form or in conversation. We use it to prepare your quote and build your site. Quote form submissions are delivered to our team via a form service called Web3Forms and are not stored anywhere else. Nothing else is collected.',
       },
       {
         h: 'Currency detection',
