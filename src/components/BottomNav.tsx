@@ -31,7 +31,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeScreen, onNavigate }
               type="button"
               aria-current={isActive ? 'page' : undefined}
             >
-              <div className="relative">
+              <span className="relative inline-block">
                 <span
                   className="material-symbols-outlined text-[22px]"
                   style={{
@@ -43,7 +43,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeScreen, onNavigate }
                 {isActive && (
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#ab2f00]" />
                 )}
-              </div>
+              </span>
               <span className="text-[10px] mt-0.5 tracking-tight">{tab.label}</span>
             </button>
           );

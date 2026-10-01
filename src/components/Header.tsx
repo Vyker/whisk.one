@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('overview')}
           className="flex items-center gap-1 group text-left cursor-pointer focus:outline-none"
         >
-          <div className="relative flex flex-col justify-center select-none">
+          <span className="relative inline-flex flex-col justify-center select-none">
             <span
               className="text-[1.625rem] leading-none font-bold text-[#201a16] tracking-tight"
               style={{ fontFamily: "'Fraunces', serif" }}
@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
                 strokeWidth="2.2"
               />
             </svg>
-          </div>
+          </span>
         </button>
 
         {/* Desktop Navigation Links */}

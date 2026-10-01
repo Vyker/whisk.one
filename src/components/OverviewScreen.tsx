@@ -240,11 +240,11 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
               alt="Warm modern desktop workspace of an artisan coffee shop owner with a fresh clean website preview on a tablet screen"
               src={SHOWCASE_SAMPLES.roastery.image}
             />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-            <div className="absolute bottom-2 left-2 px-2.5 py-1 rounded-full bg-[#fff8f5]/90 backdrop-blur-md text-[10px] font-mono font-medium text-[#201a16] flex items-center gap-1 shadow-xs">
+            <span className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+            <span className="absolute bottom-2 left-2 px-2.5 py-1 rounded-full bg-[#fff8f5]/90 backdrop-blur-md text-[10px] font-mono font-medium text-[#201a16] flex items-center gap-1 shadow-xs">
               <span>The Roastery Co.</span>
               <span className="material-symbols-outlined text-[12px] opacity-70">open_in_new</span>
-            </div>
+            </span>
           </button>
 
           {/* Card 2: Maison Éclat */}
@@ -257,17 +257,17 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
               alt="Chic boutique beauty salon interior with an open appointment book and sleek phone interface displaying an elegant service menu"
               src={SHOWCASE_SAMPLES.maison.image}
             />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
-            <div className="absolute bottom-2 left-2 px-2.5 py-1 rounded-full bg-[#fff8f5]/90 backdrop-blur-md text-[10px] font-mono font-medium text-[#201a16] flex items-center gap-1 shadow-xs">
+            <span className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+            <span className="absolute bottom-2 left-2 px-2.5 py-1 rounded-full bg-[#fff8f5]/90 backdrop-blur-md text-[10px] font-mono font-medium text-[#201a16] flex items-center gap-1 shadow-xs">
               <span>Maison Éclat</span>
               <span className="material-symbols-outlined text-[12px] opacity-70">open_in_new</span>
-            </div>
+            </span>
           </button>
         </div>
       </section>
 
-      {/* WHO IT'S FOR STRIP */}
-      <section className="py-3 bg-[#fef1ea] overflow-x-auto no-scrollbar border-y border-[#e3bfb5]/30">
+      {/* WHO IT'S FOR STRIP (div, not section — no heading) */}
+      <div className="py-3 bg-[#fef1ea] overflow-x-auto no-scrollbar border-y border-[#e3bfb5]/30">
         <div className="px-5 flex gap-2 whitespace-nowrap">
           {INDUSTRY_CHIPS.map((chip) => {
             const isSelected = selectedIndustry === chip.slug;
@@ -286,7 +286,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({
             );
           })}
         </div>
-      </section>
+      </div>
 
       {/* S-LINE WHISK DIVIDER */}
       <div className="w-full flex justify-center py-7 text-[#e3bfb5]">
